@@ -1,0 +1,29 @@
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+
+LiquidCrystal_I2C lcd(0x27,  16, 2);
+void setup()
+{
+
+ //initialize lcd screen
+ lcd.init();
+ // turn on the backlight
+ lcd.backlight();
+
+}
+
+void loop()
+{
+ //Set cursor to character 1 on line 0
+ lcd.setCursor(1,0);
+ lcd.print("Hello World");
+delay(1000);
+ lcd.clear();
+
+ 
+ //Set cursor to character 1 on line 1
+ lcd.setCursor(1,1);
+ lcd.print("Have a nice day");
+ delay(1000);
+ lcd.clear();
+}
